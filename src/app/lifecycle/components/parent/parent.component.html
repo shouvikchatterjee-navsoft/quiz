@@ -1,0 +1,24 @@
+<div class="container w-100 vh-75 bg-primary">
+    <h1 class="mt-5 text-center">Parent View</h1>
+    <p class="mt-2 text-center">{{parentData}}</p>
+    <p class="mt-2 text-center">{{date | date:"hh:mm:ss"}}</p>
+    <input
+        [(ngModel)]="data"
+        type="text"
+        class="form-control w-50 m-auto"
+        placeholder="Enter data for child...">
+    <input
+        [(ngModel)]="data1"
+        type="text"
+        class="form-control w-50 m-auto"
+        placeholder="Enter data for child...">
+    <input
+        [(ngModel)]="data2"
+        type="text"
+        class="form-control w-50 m-auto"
+        placeholder="Enter data for child...">
+    <div class="w-100 d-flex justify-content-center">
+        <button (click)="clickParent()" class="btn btn-danger my-2">Parent</button>
+    </div>
+    <!-- <app-child [dataForChild]='data'></app-child> -->
+</div>

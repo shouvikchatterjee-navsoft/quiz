@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div class="container">
+    <app-modal class="modal_popup">
+        <!-- <div bodyText>This is body text..</div> -->
+    </app-modal>
+    <app-loader class="loader"></app-loader>
+    <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
+    <router-outlet name="other"></router-outlet>
+</div>

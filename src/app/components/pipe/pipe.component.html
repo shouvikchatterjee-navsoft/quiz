@@ -1,0 +1,70 @@
+<div class="container">
+    <h1>date pipe:</h1>
+    <p>Date: {{dateObj}}</p>
+    <p>Date with <b>date</b> pipe: {{dateObj | date}}</p>
+    <p>Date with <b>date:"short"</b> pipe: {{dateObj | date:"short"}}</p>
+    <p>Date with <b>date:"shortDate"</b> pipe: {{dateObj | date:"shortDate"}}</p>
+    <p>Date with <b>date:"fullDate"</b> pipe: {{dateObj | date:"fullDate"}}</p>
+    <p>Date with <b>date:"mediumTime"</b> pipe: {{dateObj | date:"mediumTime"}}</p>
+    <h1>uppercase pipe:</h1>
+    <input
+        [(ngModel)]="textLowerCase"
+        type="text" 
+        class="form-control"
+        placeholder="Enter text in lowercase...">
+    <p class="mt-2">Text with <b>uppercase</b> pipe: {{textLowerCase | uppercase}}</p>
+
+    <h1>lowercase pipe:</h1>
+    <input
+        [(ngModel)]="textUpperCase"
+        type="text" 
+        class="form-control"
+        placeholder="Enter text in uppercase...">
+    <p class="mt-2">Text with <b>lowercase</b> pipe: {{textUpperCase | lowercase}}</p>
+
+    <h1>currency pipe:</h1>
+    <p>currecy using <b>currency</b>(US-dollar) pipe is: {{currencyVal | currency}}</p>
+    <p>currecy using <b>currency:INR</b>(Indian-rupee) pipe is: {{currencyVal | currency:"INR"}}</p>
+    <p>currecy using <b>currency:AUD</b>(Australian-dollar) pipe is: {{currencyVal | currency:"AUD"}}</p>
+    <p>currecy using <b>currency:BDT</b>(Bangladesh-taka) pipe is: {{currencyVal | currency:"BDT"}}</p>
+    <p>currecy using <b>currency:EUR</b>(Euro) pipe is: {{currencyVal | currency:"EUR"}}</p>
+    <p>currecy using <b>currency:GBP</b>(Pound) pipe is: {{currencyVal | currency:"GBP"}}</p>
+    <p>currecy using <b>currency:BRL</b>(Brazilian-real) pipe is: {{currencyVal | currency:"BRL"}}</p>
+    <p>currecy using <b>currency:CNY</b>(Chinese-yuan) pipe is: {{currencyVal | currency:"CNY"}}</p>
+    <p>currecy using <b>currency:ARS</b>(Argentine-peso) pipe is: {{currencyVal | currency:"ARS"}}</p>
+
+    <h1>decimal pipe:</h1>    
+    <input
+        [(ngModel)]="numberForDecimalPipe"
+        (ngModelChange)="updateNumberArr()"    
+        (keypress)="decimalNumberOnlyForDecimalPipe($event)"    
+        class="form-control"
+        type="text"
+        placeholder="Enter a number...">
+    <p class="mt-2">original number is: {{numberForDecimalPipe}}</p>
+    <p>number using <b>number</b> pipe is: {{numberForDecimalPipe | number}}</p>
+    <p>number using <b>number:'3.1-5'</b> pipe is: {{numberForDecimalPipe | number:'3.1-5'}}</p>
+    <p>number using <b>number:'4.5-5'</b> pipe is: {{numberForDecimalPipe | number:'4.5-5'}}</p>
+
+    <h1>percent pipe:</h1>    
+    <input
+        [(ngModel)]="numberForPercentPipe"
+        (ngModelChange)="updatePercentArr()"    
+        (keypress)="decimalNumberOnlyForPercentPipe($event)"    
+        class="form-control"
+        type="text"
+        placeholder="Enter a number...">
+    <p class="mt-2">original number is: {{numberForPercentPipe}}</p>
+    <p>number using <b>percent</b> pipe is: {{numberForPercentPipe | percent}}</p>
+    <p>number using <b>percent:'3.1-5'</b> pipe is: {{numberForPercentPipe | percent:'3.1-5'}}</p>
+    <p>number using <b>percent:'4.5-5'</b> pipe is: {{numberForPercentPipe | percent:'4.5-5'}}</p>
+
+    <h1>json pipe:</h1>
+    <p>json object is: {{jsonObj}}</p>
+    <p>json object using <b>json</b> pipe is: {{jsonObj | json}}</p>
+
+    <h1>async pipe:</h1>
+    <p>time: {{time}}</p>
+    <p>time using <b>async</b> pipe: {{time | async}}</p>
+
+</div>

@@ -13,4 +13,7 @@ export class TodoListComponent {
   itemDel() {
     this.itemDelete.emit(true);
   }
+  ngOnChanges(){
+    //console.log('list: ',this.list);
+  }
 }

@@ -44,10 +44,10 @@
         "building": "River Dale",
         "landMark": "Ganesh Temple",
         "post": "Nilje Gaon",
-        "state": "Maharashtra",
+        "state": "Kerala",
         "pinCode": "421204"
       },
-      "department": "Software",
+      "department": "Softwareee",
       "designation": "Developer",
       "id": 3
     },
@@ -84,24 +84,20 @@
       "department": "Software",
       "designation": "Developer",
       "id": 5
-    },
-    {
-      "firstName": "sdssds",
-      "lastName": "aadsa",
-      "email": "hh@ff.dd",
-      "cell": "9874894016",
-      "age": "43",
-      "address": {
-        "building": "asd2sd",
-        "landMark": "sdsd",
-        "post": "sasd",
-        "state": "West Bengal",
-        "pinCode": "713321"
-      },
-      "department": "sdasds",
-      "designation": "asdaas",
-      "id": 6
     }
   ],
-  "todo": []
+  "todo": [
+    {
+      "toDoData": "a",
+      "id": 1
+    },
+    {
+      "toDoData": "b",
+      "id": 2
+    },
+    {
+      "toDoData": "c",
+      "id": 3
+    }
+  ]
 }

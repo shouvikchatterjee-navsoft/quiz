@@ -1,0 +1,34 @@
+ <div
+    *ngIf="isModalShow"
+    class="modal-pos">
+    <div
+        (click)="closeModal()"
+        class="modal-bg">
+    </div>
+    <!-- Modal content -->
+    <div class="modal-contents">
+        <div class="modal-header w-100 d-flex align-items-center
+            justify-content-between">
+            <div class="title">Modal</div>
+            <div
+                (click)="closeModal()"
+                class="close">&times;</div>
+        </div>
+        <div class="modal-body">
+            <!-- <ng-content select="[bodyText]"></ng-content> aage emni korechilam-->
+            <div [innerHtml]="this.htmlData"></div>
+        </div>
+        <div class="modal-footer">
+            <button
+                (click)="saveModal()"
+                class="btn btn-light mr-2">
+                Save
+            </button>
+            <button
+                (click)="closeModal()"
+                class="btn btn-light">
+                Close
+            </button>
+        </div>
+    </div>
+</div>

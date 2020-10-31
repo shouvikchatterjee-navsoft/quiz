@@ -1,5 +1,5 @@
 <div class="container mt-2">
-    <ng-container *ngIf="!isLoader; else showLoader">
+    <ng-container *ngIf="!isLoader">
         <h1 class="text-center">{{heading}}</h1>
         <form *ngIf="empForm" [formGroup]="empForm">
             <div class="row mt-3">
@@ -385,13 +385,13 @@
         </form>
     </ng-container>
 
-    <ng-template #showLoader>
+    <!-- <ng-template #showLoader>
         <div class="d-flex justify-content-center align-items-center vh-100">
             <mat-progress-spinner
                 color="accent"
                 mode="indeterminate">
             </mat-progress-spinner>
         </div>
-    </ng-template>
+    </ng-template> -->
 
 </div>

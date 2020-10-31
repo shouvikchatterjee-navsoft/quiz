@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { DataResolverService } from '../../services/data-resolver.service';
+import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-user-form',
@@ -12,7 +13,6 @@ import { DataResolverService } from '../../services/data-resolver.service';
 export class UserFormComponent implements OnInit {
 
   private paramId;
-
   public empForm;
   public isLoader: boolean = false;
   public blankDataModel = {
@@ -67,9 +67,8 @@ export class UserFormComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private dataResolverService: DataResolverService) {
-
-    }
+    private dataResolverService: DataResolverService,
+    private loaderService:LoaderService) {}
 
   ngOnInit() {
     console.log('ngOnInit()');
@@ -112,21 +111,25 @@ export class UserFormComponent implements OnInit {
   getEmployee(id: number) {
     console.log('getEmployee()', id);
     this.isLoader = true;
+    this.loaderService.showLoader();
     this.dataResolverService.getEmployee(id).subscribe(
       res => {
         console.log('Get Response', res);
         this.isLoader = false;
+        this.loaderService.hideLoader();
         this.initEmpForm(res);
-        this.empForm.markAsTouched();
+        // this.empForm.markAsTouched();
       },
       err => {
         console.log('Get Error', err);
         this.isLoader = false;
+        this.loaderService.hideLoader();
       });
   }
 
   onSubmit() {
     this.isLoader = true;
+    this.loaderService.showLoader();
     this.paramId ? this.updateData(this.paramId, this.empForm.value) : this.addData();
   }
 
@@ -135,11 +138,13 @@ export class UserFormComponent implements OnInit {
       res => {
         console.log('Post Response', res);
         this.isLoader = false;
+        this.loaderService.hideLoader();
         this.onCancel();
       },
       err => {
         console.log('Post Error', err);
         this.isLoader = false;
+        this.loaderService.hideLoader();
       });
   }
 
@@ -148,11 +153,13 @@ export class UserFormComponent implements OnInit {
       res => {
         console.log('PUT Response', res);
         this.isLoader = false;
+        this.loaderService.hideLoader();
         this.onCancel();
       },
       err => {
         console.log('PUT Error', err);
         this.isLoader = false;
+        this.loaderService.hideLoader();
       });
   }
 
