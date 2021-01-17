@@ -1,0 +1,75 @@
+<div class="container mt-3">
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">My title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="d-flex float-right">
+                        <button><mat-icon class="material-icons " (click)="addToCart('prod1')">
+                            add_circle
+                            </mat-icon>
+                        </button>
+                        <div *ngIf="count1" class="ml-2">
+                            (<span><b>{{count1}}</b></span>)
+                        </div>
+                        <button><mat-icon class="material-icons " (click)="removeFromCart('prod1')">
+                            remove_circle
+                            </mat-icon>
+                        </button>
+                    </div>
+                    <div class="float-none"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">My title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="d-flex float-right">
+                        <button><mat-icon class="material-icons " (click)="addToCart('prod2')">
+                            add_circle
+                                </mat-icon>
+                            </button>
+                        <div *ngIf="count2" class="ml-2">
+                            (<span>{{count2}}</span>)
+                        </div>
+                        <button><mat-icon class="material-icons " (click)="removeFromCart('prod2')">
+                            remove_circle
+                                </mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">My title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="d-flex float-right">
+                        <button><mat-icon class="material-icons " (click)="addToCart('prod3')">
+                            add_circle
+                                    </mat-icon>
+                                </button>
+                        <div *ngIf="count3" class="ml-2">
+                            (<span>{{count3}}</span>)
+                        </div>
+                        <button><mat-icon class="material-icons " (click)="removeFromCart('prod3')">
+                            remove_circle
+                                    </mat-icon>
+                                </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
