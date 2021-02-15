@@ -1,0 +1,30 @@
+
+<div class="container">
+    <!-- <app-modal class="modal_popup">
+        <div bodyText>This is ToDo App text..</div>
+    </app-modal> -->
+    <div class="form-group mt-5">
+        <label>Add ToDo</label>
+        <input
+            type="text"
+            class="form-control"
+            (keyup.enter)="addToDoList($event)">
+    </div>
+
+    <div *ngIf="isDelete" class="mt-2 mb-3">{{deletedItem}} has been deleted.</div>
+
+    <!-- <div *ngIf="toDoList.length>0" class="row mt-2"> -->
+    <div>
+        <ng-container *ngIf="toDoValue || numberOfToDoItems;else noData">
+            <div class="col-12">
+                <app-todo-list
+                    [toDoItem]="toDoValue"                                    
+                    (deleteItem)="onDelete($event)"
+                    (deletedItem)="onDeleteItem($event)"
+                    (toDoArrLength)="checkArrayLength($event)">
+                </app-todo-list>
+            </div>
+        </ng-container>
+        <ng-template #noData>No ToDo data found.</ng-template>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container w-75 vh-75 bg-warning">
+    <h1 class="mt-2 text-center">Child View</h1>
+    <!-- <p class="mt-2 text-center">{{dataForChild}}</p> -->
+    <!-- <p class="mt-2 text-center">{{data1}}</p> -->
+    <!-- <div *ngIf="dataForChild" class="mt-2 text-center">Structural Directive</div> -->
+    <div [ngStyle]="{'color':'red'}" class="mt-2 text-center">Behavioural Directive</div>    
+    <input
+        [(ngModel)]="data"        
+        name = "childText"
+        type="text"
+        class="form-control w-50 m-auto"
+        placeholder="Enter data for sub-child...">
+    <app-sub-child [dataForSubChild]="data"></app-sub-child>
+</div>

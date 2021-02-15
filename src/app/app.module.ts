@@ -27,6 +27,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TokenInterceptorService } from './auth/token-interceptor.service';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { ColorDirective } from './color.directive';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { ColorDirective } from './color.directive';
     MatInputModule,
     MatFormFieldModule,
     ModalModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {

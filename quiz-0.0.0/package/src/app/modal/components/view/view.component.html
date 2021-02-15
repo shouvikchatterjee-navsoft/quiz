@@ -1,0 +1,27 @@
+<div class="container vh-100">
+    <h1 class="text-center p-5">ng-content Example</h1>
+    <h1 class="mb-5 w-80 text-center">Click on below buttons to open modal...</h1>
+        
+    <app-modal *ngIf="isModalShow" class="modal-box">
+        <div background (click)="closeModal()" class="modal-bg"></div>
+        <div header class="w-100 d-flex align-items-center justify-content-between">
+            <div [innerHTML]="title" class="title"></div>
+            <div (click)="closeModal()" class="close">&times;</div>
+        </div>        
+        <div body [innerHTML]="bodyText"></div>
+        <div footer>
+            <button (click)="saveModal()" class="btn btn-light mr-2">Save</button>
+            <button (click)="closeModal()" class="btn btn-light">Close</button>
+        </div>
+    </app-modal>
+
+    <div class="d-flex justify-content-between w-50 button">
+        <ng-container *ngFor="let btn of btnArr;let i= index">
+            <button
+                (click)="showModal('Button'+(i+1))"
+                class="btn btn-success">
+                Button{{btn}}
+            </button>
+        </ng-container>
+    </div>
+</div>

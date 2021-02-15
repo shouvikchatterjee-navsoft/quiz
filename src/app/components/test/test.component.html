@@ -10,3 +10,24 @@
     </div>
     <input [(ngModel)]="progValue" (keyup.enter)="updateProgress($event)" class="form-control mt-3" type="number" placeholder="Enter value between 1-500 to show the progress bar...">
 </div>
+
+<ul>
+    <li *ngFor="let pizza of pizzas$ | async">
+        {{pizza.name | uppercase}} {{pizza.price}}
+    </li>
+</ul>
+<ul>
+    <li *ngFor="let pizza of pizzas$ | async">
+        {{pizza.name | uppercase}} {{pizza.price}}
+    </li>
+</ul>
+<ul>
+    <li *ngFor="let item of data">
+        {{item.fName | uppercase}} {{item.lName | uppercase}}
+    </li>
+</ul>
+<ul>
+    <li *ngFor="let item of data">
+        {{item.fName | uppercase}} {{item.lName | uppercase}}
+    </li>
+</ul>
