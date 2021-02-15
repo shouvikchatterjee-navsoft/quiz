@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Pizza } from 'src/app/model/pizza.model';
 import { TestService } from 'src/app/services/test.service';
 
 @Component({
@@ -15,6 +17,7 @@ export class TestComponent implements OnInit {
   progValue = 0;
   progress = 0;
   time;
+  pizzas$: Observable<Pizza[]>;
 
   constructor(
     private testService: TestService
@@ -23,6 +26,7 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
     console.log('ngOnInit', this.progValue);
     this.data = this.testService.data;
+    this.pizzas$ = this.testService.getPizzas$;
     this.promise = new Promise((resolve, reject) => {
       if (this.completed) {
         resolve('It has been resolved.');
